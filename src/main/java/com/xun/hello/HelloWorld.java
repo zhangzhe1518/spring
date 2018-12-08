@@ -17,6 +17,10 @@ public class HelloWorld {
         this.sayHello = sayHello;
     }
 
+    /**
+     * sayHello
+     * @return
+     */
     public String getSayHello() {
         return sayHello;
     }
