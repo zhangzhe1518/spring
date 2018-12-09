@@ -9,6 +9,27 @@
         id：标识容器中的Bean(唯一)
     -->
     <bean id="hello" class="com.xun.hello.HelloWorld">
-        <property name="sayHello" value="hello"></property>
+        <!--
+            setter方法注入Bean的属性值或依赖对象:
+            属性注入：使用<property>元素，使用name属性指向Bean的属性名，value属性或<value>子节点为name属性设置值
+        -->
+        <property name="sayHello" value="hello">
+        </property>
+    </bean>
+
+
+    <!--
+        通过构造方法来配置bean:
+        使用构造器注入属性值可以指定参数的位置和参数的类型以便与区分重载构造器
+    -->
+    <bean id="car1" class="com.xun.beans.Car">
+        <constructor-arg value="奥迪" index="0"></constructor-arg>
+        <constructor-arg value="上海" index="1"></constructor-arg>
+        <constructor-arg value="100000" index="2"></constructor-arg>
+    </bean>
+    <bean id="car2" class="com.xun.beans.Car">
+        <constructor-arg value="奥迪" type="java.lang.String"></constructor-arg>
+        <constructor-arg value="shanghai" type="java.lang.String"></constructor-arg>
+        <constructor-arg value="240" type="int"></constructor-arg>
     </bean>
 </beans>
