@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
 
     <!--
         配置Bean
@@ -13,7 +14,12 @@
             setter方法注入Bean的属性值或依赖对象:
             属性注入：使用<property>元素，使用name属性指向Bean的属性名，value属性或<value>子节点为name属性设置值
         -->
-        <property name="sayHello" value="hello">
+        <property name="sayHello" value="hello"></property>
+        <!--
+            如果字面值包含特殊字符可以使用 <![CDATA[]]> 包裹起来
+        -->
+        <property name="name">
+            <value><![CDATA[<寻>^]]></value>
         </property>
     </bean>
 
@@ -32,4 +38,59 @@
         <constructor-arg value="shanghai" type="java.lang.String"></constructor-arg>
         <constructor-arg value="240" type="int"></constructor-arg>
     </bean>
+
+    <bean id="person" class="com.xun.beans.Person">
+        <property name="name" value="寻"></property>
+        <property name="age" value="23"></property>
+        <!--
+            要是bean之间能够相互访问，在bean的配置文件中可以通过<ref>元素活着ref属性为bean的属性或构造器参数指定对bean的引用
+        -->
+        <property name="car" ref="car2"></property>
+
+        <!-- 使用<list>节点为集合属性赋值 -->
+        <property name="cars">
+            <list>
+                <ref bean="car1"/>
+                <ref bean="car2"/>
+            </list>
+        </property>
+
+        <!-- 配置map属性 -->
+        <property name="carMap">
+            <!-- 使用<map>节点及map的子节点<entry>节点来配置map -->
+            <map>
+                <entry key="AAA" value-ref="car1"></entry>
+                <entry key="AAA" value-ref="car2"></entry>
+            </map>
+        </property>
+    </bean>
+
+    <!-- 配置单例集合的bean,以供多个bean引用,需要导入util命名空间 -->
+    <util:list id="cars">
+        <ref bean="car1"/>
+        <ref bean="car2"/>
+    </util:list>
+    <bean id="person1" class="com.xun.beans.Person">
+        <property name="name" value="寻。"></property>
+        <property name="age" value="23"></property>
+        <property name="cars" ref="cars"></property>
+    </bean>
+
+    <!-- p命名空间 为bean的属性赋值 -->
+    <bean id="person2" class="com.xun.beans.Person" p:age="30" p:name="xun" p:cars-ref="cars"></bean>
+
+
+    <!-- 配置Properties属性值 -->
+    <bean id="dataSources" class="com.xun.beans.DataSources">
+        <property name="properties">
+            <!-- 使用<props>和<prop>节点来配置Properties -->
+            <props>
+                <prop key="user">root</prop>
+                <prop key="passWord">123456</prop>
+                <prop key="jdbcUrl">jdbc:mysql://test</prop>
+                <prop key="driverClass">com.mysql.jdbc.Driver</prop>
+            </props>
+        </property>
+    </bean>
+
 </beans>
