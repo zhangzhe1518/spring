@@ -6,6 +6,10 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * @author zhangzhe
+ * 如何配置list和map
+ */
 public class Person {
 
     private String name;

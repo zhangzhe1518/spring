@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 使用bean的scope来配置bean的作用域 -->
+    <!--
+        scope=singleton(默认值)单例的：
+        容器初始化的时候就会创建bean的实例，在整个容器的声明周期内只会创建这一个bean(单例的)
+        配置文件加载完之后就会执行无参构造方法
+    -->
+    <bean id="student" class="com.xun.scope.Student" scope="singleton">
+        <property name="name" value="寻"></property>
+        <property name="age" value="23"></property>
+    </bean>
+
+    <!--
+        scope=prototype原型的:
+        容器初始化的时候并不会创建bean的实例，而是在每次使用的时候都会通过无参构造器创建一个新的Bean的实例对象
+        使用多少次 无参构造器就会执行多少次 并创建多少个新的Bean实例
+    -->
+    <bean id="stu" class="com.xun.scope.Student" scope="prototype">
+        <property name="name" value="xun"></property>
+        <property name="age" value="32"></property>
+    </bean>
+</beans>

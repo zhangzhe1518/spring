@@ -3,6 +3,10 @@ package com.xun.autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+/**
+ * @author zhangzhe
+ * bean的自动装配
+ */
 public class Main {
 
     public static void main(String[] args) {

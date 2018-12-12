@@ -5,6 +5,10 @@ import com.xun.autowired.Teacher;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+/**
+ * @author zhangzhe
+ * bean之间的继承和依赖关系
+ */
 public class Main {
 
     public static void main(String[] args) {

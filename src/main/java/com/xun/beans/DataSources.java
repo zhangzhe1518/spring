@@ -5,6 +5,10 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.util.Properties;
 
+/**
+ * @author zhangzhe
+ * 配置Properties属性值
+ */
 public class DataSources {
 
     private Properties properties;
