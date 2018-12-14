@@ -14,9 +14,11 @@ public class Main {
         Teacher teacher = (Teacher) context.getBean("teacher");
         System.out.println(teacher);
         System.out.println("=============================");
+
         Teacher teacher1 = (Teacher) context.getBean("teacher1");
         System.out.println(teacher1);
         System.out.println("=============================");
+
         Teacher teacher2 = (Teacher) context.getBean("teacher2");
         System.out.println(teacher2);
     }
