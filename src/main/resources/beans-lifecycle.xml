@@ -3,7 +3,19 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+    <!-- 配置bean的初始化方法init-method和销毁方法destroy-method -->
     <bean id="car" class="com.xun.beanslifecycle.Bus" init-method="init" destroy-method="destroy">
         <property name="brand" value="奥迪"></property>
     </bean>
+
+    <!--
+        配置bean的前置后置处理器 不需要提供id,IOC容器自动会识别
+        实现BeanPostProcessor接口并提供
+        postProcessBeforeInitialization(Object bean, String beanName)：init-method之前被调用
+        postProcessAfterInitialization(Object bean, String beanName)：destroy-method之后被调用
+        两个方法的重写
+        bean:实例本身
+        beanName:IOC容器中配置的bean的名字
+    -->
+    <bean class="com.xun.beanslifecycle.MyBeanPostProcessor"/>
 </beans>
