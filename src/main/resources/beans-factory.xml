@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--
+        通过静态工厂方法来配置bean,注意不是配置静态工厂方法实例而是配置bean实例
+        class属性:指向静态工厂方法的全类名
+        factory-method:指向静态工厂的工厂方法
+        constructor-arg:如果工厂方法需要传入参数,则使用constructor-arg来配置参数
+    -->
+    <bean id="animal" class="com.xun.factory.StaticAnimalFactory" factory-method="getAnimal">
+        <!-- 通过constructor-arg来给getAnimal方法传递一个参数 -->
+        <constructor-arg value="dog"></constructor-arg>
+    </bean>
+</beans>
