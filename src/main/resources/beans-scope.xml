@@ -9,7 +9,7 @@
         容器初始化的时候就会创建bean的实例，在整个容器的声明周期内只会创建这一个bean(单例的)
         配置文件加载完之后就会执行无参构造方法
     -->
-    <bean id="student" class="com.xun.scope.Student" scope="singleton">
+    <bean id="student" class="com.xun.springioc.scope.Student" scope="singleton">
         <property name="name" value="寻"></property>
         <property name="age" value="23"></property>
     </bean>
@@ -19,7 +19,7 @@
         容器初始化的时候并不会创建bean的实例，而是在每次使用的时候都会通过无参构造器创建一个新的Bean的实例对象
         使用多少次 无参构造器就会执行多少次 并创建多少个新的Bean实例
     -->
-    <bean id="stu" class="com.xun.scope.Student" scope="prototype">
+    <bean id="stu" class="com.xun.springioc.scope.Student" scope="prototype">
         <property name="name" value="xun"></property>
         <property name="age" value="32"></property>
     </bean>
