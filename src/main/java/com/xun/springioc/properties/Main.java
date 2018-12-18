@@ -1,4 +1,4 @@
-package com.xun.properties;
+package com.xun.springioc.properties;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;

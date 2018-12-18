@@ -1,4 +1,4 @@
-package com.xun.hello;
+package com.xun.springioc.hello;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;

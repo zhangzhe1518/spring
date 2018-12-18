@@ -1,4 +1,4 @@
-package com.xun.properties;
+package com.xun.springioc.properties;
 
 public class DataSource {
 

@@ -1,4 +1,4 @@
-package com.xun.autowired;
+package com.xun.springioc.autowired;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;

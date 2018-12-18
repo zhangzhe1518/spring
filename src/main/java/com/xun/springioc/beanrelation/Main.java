@@ -1,7 +1,7 @@
-package com.xun.beanrelation;
+package com.xun.springioc.beanrelation;
 
-import com.xun.autowired.Address;
-import com.xun.autowired.Teacher;
+import com.xun.springioc.autowired.Address;
+import com.xun.springioc.autowired.Teacher;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 

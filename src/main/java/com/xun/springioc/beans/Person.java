@@ -1,4 +1,4 @@
-package com.xun.beans;
+package com.xun.springioc.beans;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;

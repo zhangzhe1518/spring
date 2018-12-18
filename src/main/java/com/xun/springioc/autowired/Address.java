@@ -1,4 +1,4 @@
-package com.xun.autowired;
+package com.xun.springioc.autowired;
 
 public class Address {
 

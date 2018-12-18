@@ -1,4 +1,4 @@
-package com.xun.scope;
+package com.xun.springioc.scope;
 
 public class Student {
 
