@@ -1,11 +1,16 @@
-package com.xun.hello;
+package com.xun.springioc.hello;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+/**
+ * @author zhangzhe
+ */
 public class HelloWorld {
 
     private String sayHello;
+
+    private String name;
 
     public HelloWorld() {
     }
@@ -22,8 +27,16 @@ public class HelloWorld {
         this.sayHello = sayHello;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public void hello(){
-        System.out.println("sayHello:"+sayHello);
+        System.out.println("name:"+name+";sayHello:"+sayHello);
     }
 
     public static void main(String[] args) {
