@@ -1,6 +1,5 @@
 package com.xun.springioc.annotationbean.configbean;
 
-import com.xun.springioc.annotationbean.configbean.service.CDServise;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
@@ -14,6 +13,6 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @ComponentScan(value = "com.xun.springioc.annotationbean.*")
 //@ComponentScan(basePackageClasses = CDServise.class)
-public class BeansConfig {
+public class ComponentScanConfig {
 
 }

@@ -8,8 +8,8 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = BeansConfig.class)
-public class Main {
+@ContextConfiguration(classes = ComponentScanConfig.class)
+public class ComponentScanTest {
 
     /**
      * @Autowired注解不仅能够用在构造器上，还能用在属性的setter上
@@ -20,7 +20,7 @@ public class Main {
     @Autowired
     private CDServise cdServise;
 
-    @Test
+    @org.junit.Test
     public void test(){
         cdServise.play();
     }
