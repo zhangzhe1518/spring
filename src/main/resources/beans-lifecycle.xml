@@ -4,7 +4,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!-- 配置bean的初始化方法init-method和销毁方法destroy-method -->
-    <bean id="car" class="com.xun.springioc.beanslifecycle.Bus" init-method="init" destroy-method="destroy">
+    <bean id="car" class="com.xun.ioc.beanslifecycle.Bus" init-method="init" destroy-method="destroy">
         <property name="brand" value="奥迪"></property>
     </bean>
 
@@ -17,5 +17,5 @@
         bean:实例本身
         beanName:IOC容器中配置的bean的名字
     -->
-    <bean class="com.xun.springioc.beanslifecycle.MyBeanPostProcessor"/>
+    <bean class="com.xun.ioc.beanslifecycle.MyBeanPostProcessor"/>
 </beans>
