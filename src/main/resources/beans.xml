@@ -9,7 +9,7 @@
         class：bean的全类名，通过反射的方式在IOC容器中创建Bean，所以要求Bean中必须有无参构造器
         id：标识容器中的Bean(唯一)
     -->
-    <bean id="hello" class="com.xun.springioc.hello.HelloWorld">
+    <bean id="hello" class="com.xun.ioc.hello.HelloWorld">
         <!--
             setter方法注入Bean的属性值或依赖对象:
             属性注入：使用<property>元素，使用name属性指向Bean的属性名，value属性或<value>子节点为name属性设置值
@@ -28,18 +28,18 @@
         通过构造方法来配置bean:
         使用构造器注入属性值可以指定参数的位置和参数的类型以便与区分重载构造器
     -->
-    <bean id="car1" class="com.xun.springioc.beans.Car">
+    <bean id="car1" class="com.xun.ioc.beans.Car">
         <constructor-arg value="奥迪" index="0"></constructor-arg>
         <constructor-arg value="上海" index="1"></constructor-arg>
         <constructor-arg value="100000" index="2"></constructor-arg>
     </bean>
-    <bean id="car2" class="com.xun.springioc.beans.Car">
+    <bean id="car2" class="com.xun.ioc.beans.Car">
         <constructor-arg value="奥迪" type="java.lang.String"></constructor-arg>
         <constructor-arg value="shanghai" type="java.lang.String"></constructor-arg>
         <constructor-arg value="240" type="int"></constructor-arg>
     </bean>
 
-    <bean id="person" class="com.xun.springioc.beans.Person">
+    <bean id="person" class="com.xun.ioc.beans.Person">
         <property name="name" value="寻"></property>
         <property name="age" value="23"></property>
         <!--
@@ -70,18 +70,18 @@
         <ref bean="car1"/>
         <ref bean="car2"/>
     </util:list>
-    <bean id="person1" class="com.xun.springioc.beans.Person">
+    <bean id="person1" class="com.xun.ioc.beans.Person">
         <property name="name" value="寻。"></property>
         <property name="age" value="23"></property>
         <property name="cars" ref="cars"></property>
     </bean>
 
     <!-- p命名空间 为bean的属性赋值 -->
-    <bean id="person2" class="com.xun.springioc.beans.Person" p:age="30" p:name="xun" p:cars-ref="cars"></bean>
+    <bean id="person2" class="com.xun.ioc.beans.Person" p:age="30" p:name="xun" p:cars-ref="cars"></bean>
 
 
     <!-- 配置Properties属性值 -->
-    <bean id="dataSources" class="com.xun.springioc.beans.DataSources">
+    <bean id="dataSources" class="com.xun.ioc.beans.DataSources">
         <property name="properties">
             <!-- 使用<props>和<prop>节点来配置Properties -->
             <props>

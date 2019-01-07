@@ -9,7 +9,7 @@
         property:配置FactoryBean的属性
         但是实际返回的实例确实FactoryBean的getObject方法返回的实例
     -->
-    <bean id="car" class="com.xun.springioc.factorybean.CarFactoryBean">
+    <bean id="car" class="com.xun.ioc.factorybean.CarFactoryBean">
         <property name="brand" value="宝马"></property>
     </bean>
 </beans>
